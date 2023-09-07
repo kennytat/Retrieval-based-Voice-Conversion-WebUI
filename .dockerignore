@@ -1,5 +1,6 @@
 .DS_Store
 __pycache__
+/.github
 /TEMP
 *.pyd
 .venv
@@ -25,3 +26,6 @@ model.sh
 
 # To set a Python version for the project
 .tool-versions
+*.exe
+*.bat
+*.ipynb

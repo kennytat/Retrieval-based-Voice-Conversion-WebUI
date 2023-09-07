@@ -4,10 +4,20 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: rvc
+    image: kennytat/rbvc-webui:latest
+    container_name: rbvc
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    shm_size: 1024m
     volumes:
-      - ./weights:/app/assets/weights
-      - ./opt:/app/opt
-      # - ./dataset:/app/dataset # you can use this folder in order to provide your dataset for model training
+      - ./assets:/app/assets
+      - ./inference:/app/inference
+      - ./dataset:/app/dataset # you can use this folder in order to provide your dataset for model training
+      - ./logs:/app/logs
     ports:
       - 7865:7865

@@ -911,7 +911,7 @@ with gr.Blocks(title="RVC WebUI") as app:
                         vc_transform1 = gr.Number(
                             label=i18n("变调(整数, 半音数量, 升八度12降八度-12)"), value=0
                         )
-                        opt_input = gr.Textbox(label=i18n("指定输出文件夹"), value="opt")
+                        opt_input = gr.Textbox(label=i18n("指定输出文件夹"), value="/app/inference")
                         f0method1 = gr.Radio(
                             label=i18n(
                                 "选择音高提取算法,输入歌声可用pm提速,harvest低音好但巨慢无比,crepe效果好但吃GPU,rmvpe效果最好且微吃GPU"
@@ -1057,10 +1057,10 @@ with gr.Blocks(title="RVC WebUI") as app:
                             visible=False,  # 先不开放调整
                         )
                         opt_vocal_root = gr.Textbox(
-                            label=i18n("指定输出主人声文件夹"), value="opt"
+                            label=i18n("指定输出主人声文件夹"), value="/app/inference"
                         )
                         opt_ins_root = gr.Textbox(
-                            label=i18n("指定输出非主人声文件夹"), value="opt"
+                            label=i18n("指定输出非主人声文件夹"), value="/app/inference"
                         )
                         format0 = gr.Radio(
                             label=i18n("导出文件格式"),
@@ -1127,7 +1127,7 @@ with gr.Blocks(title="RVC WebUI") as app:
                 )
                 with gr.Row():
                     trainset_dir4 = gr.Textbox(
-                        label=i18n("输入训练文件夹路径"), value="E:\\语音音频+标注\\米津玄师\\src"
+                        label=i18n("输入训练文件夹路径"), value="/app/dataset"
                     )
                     spk_id5 = gr.Slider(
                         minimum=0,
